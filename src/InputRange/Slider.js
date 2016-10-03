@@ -13,9 +13,10 @@ import { autobind } from './util';
  * @return {Document} Document
  */
 function getDocument(slider) {
-  const { slider: { ownerDocument } } = slider.refs;
-
-  return ownerDocument;
+  if(slider.refs.slider)
+    return slider.refs.slider.ownerDocument;
+  else
+    return window.document;
 }
 
 /**
