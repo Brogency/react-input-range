@@ -637,9 +637,7 @@ var _Label2 = _interopRequireDefault(_Label);
 var _util = require('./util');
 
 function getDocument(slider) {
-  var ownerDocument = slider.refs.slider.ownerDocument;
-
-  return ownerDocument;
+  if (slider.refs.slider) return slider.refs.slider.ownerDocument;else return window.document;
 }
 
 function getStyle(slider) {
